@@ -1,5 +1,6 @@
 <%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:set var="context" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Farm2Thali | Fresh Eggs from Local Farms</title>
   <meta name="description" content="Order fresh white and gavran eggs directly from our farms to your home. Hygienic, naturally raised poultry, and fast delivery." />
-  <link rel="icon" href="${pageContext.request.contextPath}/assets/favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="${context}/assets/favicon.ico" type="image/x-icon" />
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
@@ -50,16 +51,20 @@
 </head>
 
 <body class="bg-gray-950 text-white overflow-x-hidden">
-
-<c:set var="context" value="${pageContext.request.contextPath}" />
-
 <!-- 🔥 HEADER -->
 <header class="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 sticky top-0 z-50 shadow-xl border-b border-gray-700">
   <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
 
-    <!-- Logo -->
-    <a href="${context}/" class="text-3xl font-extrabold tracking-wide text-yellow-400 glow-logo hover:scale-105 transition transform duration-300 ease-in-out">
-      Farm2<span class="text-white">Thali</span>
+    <!-- Logo with Image -->
+    <a href="${context}/" class="flex items-center gap-3 group transition-transform transform hover:scale-105 duration-300 ease-in-out">
+      <!-- Circular Logo Image -->
+      <img src="${context}/assets/LOGO/poultry/logo.png"  alt="Farm2Thali Logo"
+           class="w-12 h-12 rounded-full shadow-lg transition-transform duration-300 ease-in-out group-hover:scale-110 group-hover:shadow-yellow-400" />
+
+      <!-- Brand Text -->
+      <span class="text-3xl font-extrabold tracking-wide text-yellow-400 glow-logo group-hover:text-yellow-300 transition-all duration-300">
+        Farm2<span class="text-white">Thali</span>
+      </span>
     </a>
 
     <!-- Desktop Nav -->
