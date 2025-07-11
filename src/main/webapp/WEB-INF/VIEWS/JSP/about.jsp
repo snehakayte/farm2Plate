@@ -96,7 +96,7 @@
     <div data-aos="fade-right">
       <div class="relative group rounded-3xl shadow-xl overflow-hidden">
         <img 
-          src="${context}/assets/LOGO/poultry/comparing.jpg" 
+          src="${context}/assets/LOGO/poultry/comparing.png"
           alt="Yolk Comparison"
           class="w-full h-[24rem] md:h-[28rem] object-contain rounded-3xl transition-transform duration-500 transform group-hover:scale-110"
         />
