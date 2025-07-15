@@ -16,16 +16,16 @@ import lombok.extern.log4j.Log4j2;
 @SpringBootApplication(exclude = { DataSourceAutoConfiguration.class })
 @Log4j2
 @EnableScheduling
-public class CodeastraApplication extends SpringBootServletInitializer {
+public class Farm2ThaliApplication extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {
 		log.info("::::::::::::::::::::::Codeastra Application Started::::::::::::::::::::::");
 
-		SpringApplication.run(CodeastraApplication.class, args);
+		SpringApplication.run(Farm2ThaliApplication.class, args);
 	}
 
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
-		return builder.sources(CodeastraApplication.class);
+		return builder.sources(Farm2ThaliApplication.class);
 	}
 }
