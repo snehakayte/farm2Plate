@@ -40,7 +40,7 @@
     <div data-aos="fade-up" data-aos-delay="200">
       <h4 class="text-xl font-semibold mb-4">Connect with Us</h4>
       <div class="flex space-x-6 mt-2">
-        <a href="https://www.instagram.com/farm2thali" target="_blank" class="text-gray-300 hover:text-yellow-400 transition transform hover:scale-110" aria-label="Instagram">
+        <a href="https://www.instagram.com/farm_2_thali/" target="_blank" class="text-gray-300 hover:text-yellow-400 transition transform hover:scale-110" aria-label="Instagram">
           <i data-lucide="instagram" class="w-6 h-6"></i>
         </a>
         <a href="https://www.facebook.com/farm2thali" target="_blank" class="text-gray-300 hover:text-yellow-400 transition transform hover:scale-110" aria-label="Facebook">
