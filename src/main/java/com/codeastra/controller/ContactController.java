@@ -24,7 +24,7 @@ public class ContactController {
 
         try {
             SimpleMailMessage mail = new SimpleMailMessage();
-            mail.setTo("snehamathankar@codeastrasolutions.com");
+            mail.setTo("contact@farm2thali.com");
             mail.setSubject("New Contact Form Submission from " + name);
             mail.setText("Name: " + name + "\nEmail: " + email + "\n\nMessage:\n" + message);
             mail.setReplyTo(email);

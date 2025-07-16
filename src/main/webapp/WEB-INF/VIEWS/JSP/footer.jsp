@@ -21,7 +21,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M16 4H8a4 4 0 00-4 4v8a4 4 0 004 4h8a4 4 0 004-4V8a4 4 0 00-4-4zM4 8l8 5 8-5" />
           </svg>
-          <a href="mailto:hello@farm2thali.com" class="hover:text-yellow-400 transition">support@farm2thali.com</a>
+          <a href="mailto:contact@farm2thali.com" class="hover:text-yellow-400 transition">contact@farm2thali.com</a>
         </li>
 
         <!-- Phone -->
