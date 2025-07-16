@@ -25,7 +25,7 @@
       </div>
     <% } %>
 
-    <form action="${context}/contact-submit" method="post" class="space-y-6">
+     <form action="/contact-submit" method="post" class="space-y-6">
       
       <!-- Full Name -->
       <div class="relative z-0 w-full group">
