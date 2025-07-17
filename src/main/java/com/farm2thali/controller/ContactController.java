@@ -1,4 +1,4 @@
-package com.codeastra.controller;
+package com.farm2thali.controller;
 
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;

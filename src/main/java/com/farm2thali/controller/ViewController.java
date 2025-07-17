@@ -1,4 +1,4 @@
-package com.codeastra.controller;
+package com.farm2thali.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

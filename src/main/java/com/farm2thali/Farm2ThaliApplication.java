@@ -1,4 +1,4 @@
-package com.codeastra;
+package com.farm2thali;
 
 import lombok.extern.log4j.Log4j2;
 import org.springframework.boot.SpringApplication;
@@ -10,7 +10,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 /**
  * @author Pratik Kayte
- * @since 06 JUN 25
+ * @since 06 JUL 25
  */
 @SpringBootApplication(exclude = { DataSourceAutoConfiguration.class })
 @Log4j2

@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" %>
 <%
     request.setAttribute("page", "order");
 %>
@@ -28,28 +28,28 @@
                class="w-full p-4 bg-gray-900 border border-gray-700 rounded-xl text-white placeholder-gray-500 focus:ring-2 focus:ring-yellow-400 focus:outline-none">
       </div>
 
-     <!-- Address -->
-<div>
-  <label for="address" class="block text-gray-400 font-semibold mb-2">Delivery Address</label>
-  
-  <!-- Location Autofill Button -->
-  <div class="flex justify-end mb-2">
-    <button type="button" onclick="getLiveLocation()"
-            class="text-yellow-400 hover:underline text-sm">
-      📍 Use My Current Location
-    </button>
-  </div>
-
-  <textarea id="address" name="address" rows="3" required
-            class="w-full p-4 bg-gray-900 border border-gray-700 rounded-xl text-white placeholder-gray-500 focus:ring-2 focus:ring-yellow-400 focus:outline-none"
-            placeholder="Enter your address or use current location..."></textarea>
-</div>
+      <!-- Address with location logic -->
+      <div>
+        <label for="address" class="block text-gray-400 font-semibold mb-2">Delivery Address</label>
+        <div class="flex justify-between items-center mb-2">
+          <small id="locationStatus" class="text-sm text-gray-400 hidden">Fetching location...</small>
+          <button type="button" onclick="getLiveLocation()"
+                  class="text-yellow-400 hover:underline text-sm">
+            📍 Use My Current Location
+          </button>
+        </div>
+        <textarea id="address" name="address" rows="3" required
+                  class="w-full p-4 bg-gray-900 border border-gray-700 rounded-xl text-white placeholder-gray-500 focus:ring-2 focus:ring-yellow-400 focus:outline-none"
+                  placeholder="Enter your address or use current location..."></textarea>
+        <input type="hidden" id="lat" name="lat" />
+        <input type="hidden" id="lon" name="lon" />
+      </div>
 
       <!-- Egg Type -->
       <div>
         <label for="eggType" class="block text-gray-400 font-semibold mb-2">Select Egg Type</label>
         <select id="eggType" name="eggType" required
-                class="w-full p-4 bg-gray-900 border border-gray-700 rounded-xl text-white placeholder-gray-500 focus:ring-2 focus:ring-yellow-400 focus:outline-none">
+                class="w-full p-4 bg-gray-900 border border-gray-700 rounded-xl text-white focus:ring-2 focus:ring-yellow-400 focus:outline-none">
           <option value="">-- Select --</option>
           <option value="White Eggs">White Eggs</option>
           <option value="Gavran Brown Eggs">Gavran Brown Eggs</option>
@@ -67,18 +67,19 @@
       <div>
         <label for="payment" class="block text-gray-400 font-semibold mb-2">Preferred Payment Method</label>
         <select id="payment" name="payment" required
-                class="w-full p-4 bg-gray-900 border border-gray-700 rounded-xl text-white placeholder-gray-500 focus:ring-2 focus:ring-yellow-400 focus:outline-none">
+                class="w-full p-4 bg-gray-900 border border-gray-700 rounded-xl text-white focus:ring-2 focus:ring-yellow-400 focus:outline-none">
           <option value="">-- Select --</option>
           <option value="Cash on Delivery">Cash on Delivery</option>
           <option value="UPI Payment">UPI Payment</option>
         </select>
       </div>
 
-      <!-- Additional Notes -->
+      <!-- Notes -->
       <div>
         <label for="notes" class="block text-gray-400 font-semibold mb-2">Additional Notes (Optional)</label>
         <textarea id="notes" name="notes" rows="2"
-                  class="w-full p-4 bg-gray-900 border border-gray-700 rounded-xl text-white placeholder-gray-500 focus:ring-2 focus:ring-yellow-400 focus:outline-none"></textarea>
+                  class="w-full p-4 bg-gray-900 border border-gray-700 rounded-xl text-white focus:ring-2 focus:ring-yellow-400 focus:outline-none"
+                  placeholder="Any delivery instructions or comments..."></textarea>
       </div>
 
       <!-- Submit Button -->
@@ -92,12 +93,17 @@
     </form>
   </div>
 </section>
-
-<!-- Geolocation Script -->
 <script>
+  const contextPath = '<%= request.getContextPath() %>'; // Safe JSP injection
+
   function getLiveLocation() {
+    const status = document.getElementById("locationStatus");
+    status.classList.remove("hidden");
+    status.textContent = "Fetching location...";
+
     if (!navigator.geolocation) {
       alert("Geolocation is not supported by your browser.");
+      status.classList.add("hidden");
       return;
     }
 
@@ -106,30 +112,45 @@
         const lat = position.coords.latitude;
         const lon = position.coords.longitude;
 
-        console.log("Latitude:", lat);
-        console.log("Longitude:", lon);
+        if (!lat || !lon || isNaN(lat) || isNaN(lon)) {
+          alert("Invalid coordinates.");
+          status.classList.add("hidden");
+          return;
+        }
 
-        const url = `https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lon}&format=json&email=test@example.com`;
+        // Fill hidden fields
+        document.getElementById("lat").value = lat;
+        document.getElementById("lon").value = lon;
 
-        fetch(url)
+        // Build API URL using concatenation instead of template literals to avoid EL conflict
+        const encodedLat = encodeURIComponent(lat);
+        const encodedLon = encodeURIComponent(lon);
+        const apiUrl = contextPath + "/api/location/reverse?lat=" + encodedLat + "&lon=" + encodedLon;
+
+        fetch(apiUrl)
           .then(response => response.json())
           .then(data => {
-            if (data && data.display_name) {
-              console.log("Fetched Address:", data.display_name);
-              document.getElementById("address").value = data.display_name;
-            } else {
-              console.error("Error in response:", data);
-              alert("Could not retrieve address. Please enter manually.");
+            try {
+              const address = data.display_name || "Address not found";
+              document.getElementById("address").value = address;
+              status.textContent = "Location fetched ✔️";
+              setTimeout(() => status.classList.add("hidden"), 3000);
+            } catch (e) {
+              console.error("Parsing error:", e);
+              alert("Could not parse address. Please enter manually.");
+              status.classList.add("hidden");
             }
           })
           .catch(error => {
             console.error("Fetch error:", error);
-            alert("Error fetching address.");
+            alert("Failed to fetch address. Please enter it manually.");
+            status.classList.add("hidden");
           });
       },
       function (error) {
         console.error("Geolocation error:", error);
         alert("Location access denied or unavailable.");
+        status.classList.add("hidden");
       }
     );
   }

@@ -1,4 +1,4 @@
-package com.codeastra;
+package com.farm2thali;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
