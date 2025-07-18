@@ -12,7 +12,7 @@
       About <span class="text-yellow-400">Farm2Thali</span>
     </h1>
     <p class="text-xl text-gray-300 font-light leading-relaxed">
-      Ethical. Herbal. Local. We're not just delivering eggs — we’re delivering trust, purity, and nutrition straight from our farm to your thali.
+      Born in the fields of Bhandara, trusted on every plate — we bring you food the way nature intended: clean, ethical, and full of life from our farm to your thali.
     </p>
   </div>
 </section>
@@ -37,13 +37,13 @@
     <div data-aos="fade-left">
       <h2 class="text-4xl font-extrabold text-yellow-400 mb-6">Our Journey Since 2014</h2>
       <p class="text-lg text-gray-300 leading-relaxed mb-5">
-        Farm2Thali was born out of a passion for purity and quality. Since our humble beginnings in <span class="text-yellow-400 font-medium">2014</span>, we’ve grown into a trusted local brand that proudly delivers the freshest, most authentic eggs to homes across the region.
-      </p>
+       Farm2Thali was born out of a passion for purity, honesty, and real food. Since our humble beginnings in 2014, we’ve grown into a trusted local brand delivering farm-fresh eggs and ethically-raised meat directly to families who care about what’s on their plate.
+       </p>
       <p class="text-lg text-gray-300 leading-relaxed mb-5">
-        Our farm is rooted in the heart of <span class="text-yellow-400 font-medium">Bhandara</span>, where we maintain our own poultry with care, integrity, and traditional values. We believe healthy birds lay healthy eggs — so we feed our hens a <span class="text-yellow-400 font-medium">100% organic, herbal-based diet</span> without any antibiotics or hormonal stimulants.
+        Rooted in the heart of <span class="text-yellow-400 font-medium">Bhandara</span>, our farm is where tradition meets transparency. We raise our own poultry with care without antibiotics or hormonal stimulants. We believe healthy birds lay healthy eggs — so we feed our hens a <span class="text-yellow-400 font-medium">100% organic, herbal-based diet</span> without any antibiotics or hormonal stimulants.
       </p>
       <p class="text-lg text-gray-300 leading-relaxed">
-        With over a decade of hands-on experience in poultry farming, our mission is simple — to bring back real food to your thali. Clean, ethical, and naturally nutritious eggs, delivered directly from our farm to your family.
+        With over a decade of hands-on experience in poultry farming, our mission is simple — to bring back real food to your thali. Clean, ethical, and naturally nutritious food, delivered directly from our farm to your family.
       </p>
     </div>
   </div>
