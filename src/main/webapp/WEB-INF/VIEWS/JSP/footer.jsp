@@ -43,7 +43,7 @@
         <a href="https://www.instagram.com/farm_2_thali/" target="_blank" class="text-gray-300 hover:text-yellow-400 transition transform hover:scale-110" aria-label="Instagram">
           <i data-lucide="instagram" class="w-6 h-6"></i>
         </a>
-        <a href="https://www.facebook.com/farm2thali" target="_blank" class="text-gray-300 hover:text-yellow-400 transition transform hover:scale-110" aria-label="Facebook">
+        <a href="https://www.facebook.com/people/Farm2thali/61578481141027/" target="_blank" class="text-gray-300 hover:text-yellow-400 transition transform hover:scale-110" aria-label="Facebook">
           <i data-lucide="facebook" class="w-6 h-6"></i>
         </a>
       </div>

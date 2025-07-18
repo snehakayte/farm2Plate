@@ -80,7 +80,7 @@
     <h2 class="text-3xl font-bold text-yellow-400 mb-4">Didn't find your question?</h2>
     <p class="text-lg text-gray-300 mb-8">Let us know your query and we'll get back to you as soon as possible.</p>
     
-    <form action="${context}/submitQuestion" method="post" class="space-y-6">
+    <form action="/question-submit" method="post" class="space-y-6">
       <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 rounded-xl bg-gray-800 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-400" />
       <input type="email" name="email" placeholder="Your Email" required class="w-full p-3 rounded-xl bg-gray-800 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-400" />
       <textarea name="question" placeholder="Your Question" rows="4" required class="w-full p-3 rounded-xl bg-gray-800 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-400"></textarea>
