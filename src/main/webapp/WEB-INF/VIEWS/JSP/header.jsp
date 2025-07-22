@@ -67,15 +67,22 @@
       </span>
     </a>
 
-    <!-- Desktop Nav -->
-    <nav class="hidden md:flex space-x-6 text-base font-medium">
-      <a href="${context}/" class="${page == 'home' ? 'text-yellow-400 font-semibold' : 'text-gray-300 hover:text-yellow-400'} transition duration-200">Home</a>
-      <a href="${context}/about" class="${page == 'about' ? 'text-yellow-400 font-semibold' : 'text-gray-300 hover:text-yellow-400'} transition duration-200">About</a>
-      <a href="${context}/services" class="${page == 'services' ? 'text-yellow-400 font-semibold' : 'text-gray-300 hover:text-yellow-400'} transition duration-200">Services</a>
-      <a href="${context}/order" class="${page == 'order' ? 'text-yellow-400 font-semibold' : 'text-gray-300 hover:text-yellow-400'} transition duration-200">Order Online</a>
-      <a href="${context}/testimonials" class="${page == 'testimonials' ? 'text-yellow-400 font-semibold' : 'text-gray-300 hover:text-yellow-400'} transition duration-200">Testimonials</a>
-      <a href="${context}/faq" class="${page == 'faq' ? 'text-yellow-400 font-semibold' : 'text-gray-300 hover:text-yellow-400'} transition duration-200">FAQ</a>
-    </nav>
+  <!-- Desktop Nav -->
+  <nav class="hidden md:flex space-x-6 text-base font-medium">
+    <a href="${context}/" class="${page == 'home' ? 'text-yellow-400 font-semibold' : 'text-gray-300 hover:text-yellow-400'} transition duration-200">Home</a>
+
+    <a href="${context}/about"  class="${page == 'about' ? 'text-yellow-400 font-semibold' : 'text-gray-300 hover:text-yellow-400'} transition duration-200">About</a>
+
+    <a href="${context}/services"  class="${page == 'services' ? 'text-yellow-400 font-semibold' : 'text-gray-300 hover:text-yellow-400'} transition duration-200">Services</a>
+
+    <a href="${context}/order" class="${page == 'order' ? 'text-yellow-400 font-semibold' : 'text-gray-300 hover:text-yellow-400'} transition duration-200">Order Online</a>
+
+    <a href="${context}/cart" class="${page == 'cart' ? 'text-yellow-400 font-semibold' : 'text-gray-300 hover:text-yellow-400'} transition duration-200">🛒 Cart</a>
+
+    <a href="${context}/testimonials" class="${page == 'testimonials' ? 'text-yellow-400 font-semibold' : 'text-gray-300 hover:text-yellow-400'} transition duration-200">Testimonials </a>
+
+    <a href="${context}/faq"  class="${page == 'faq' ? 'text-yellow-400 font-semibold' : 'text-gray-300 hover:text-yellow-400'} transition duration-200"> FAQ </a> </nav>
+
 
     <!-- CTA -->
     <a href="${context}/contact"
@@ -93,14 +100,47 @@
 
   <!-- Mobile Nav -->
   <div id="mobileMenu" class="hidden md:hidden bg-gray-900 px-6 pb-5 pt-3 text-base font-medium space-y-3">
-    <a href="${context}/" class="block ${page == 'home' ? 'text-yellow-400 font-semibold' : 'text-gray-300 hover:text-yellow-400'}">Home</a>
-    <a href="${context}/about" class="block ${page == 'about' ? 'text-yellow-400 font-semibold' : 'text-gray-300 hover:text-yellow-400'}">About</a>
-    <a href="${context}/services" class="block ${page == 'services' ? 'text-yellow-400 font-semibold' : 'text-gray-300 hover:text-yellow-400'}">Services</a>
-    <a href="${context}/order" class="block ${page == 'order' ? 'text-yellow-400 font-semibold' : 'text-gray-300 hover:text-yellow-400'}">Order</a>
-    <a href="${context}/testimonials" class="block ${page == 'testimonials' ? 'text-yellow-400 font-semibold' : 'text-gray-300 hover:text-yellow-400'}">Testimonials</a>
-    <a href="${context}/faq" class="block ${page == 'faq' ? 'text-yellow-400 font-semibold' : 'text-gray-300 hover:text-yellow-400'}">FAQ</a>
-    <a href="${context}/contact" class="block ${page == 'contact' ? 'text-yellow-400 font-semibold' : 'text-gray-300 hover:text-yellow-400'}">Contact</a>
+    <a href="${context}/"
+       class="block ${page == 'home' ? 'text-yellow-400 font-semibold' : 'text-gray-300 hover:text-yellow-400'}">
+       Home
+    </a>
+
+    <a href="${context}/about"
+       class="block ${page == 'about' ? 'text-yellow-400 font-semibold' : 'text-gray-300 hover:text-yellow-400'}">
+       About
+    </a>
+
+    <a href="${context}/services"
+       class="block ${page == 'services' ? 'text-yellow-400 font-semibold' : 'text-gray-300 hover:text-yellow-400'}">
+       Services
+    </a>
+
+    <a href="${context}/order"
+       class="block ${page == 'order' ? 'text-yellow-400 font-semibold' : 'text-gray-300 hover:text-yellow-400'}">
+       Order Online
+    </a>
+
+    <a href="${context}/cart"
+       class="block ${page == 'cart' ? 'text-yellow-400 font-semibold' : 'text-gray-300 hover:text-yellow-400'}">
+       🛒 Cart
+    </a>
+
+    <a href="${context}/testimonials"
+       class="block ${page == 'testimonials' ? 'text-yellow-400 font-semibold' : 'text-gray-300 hover:text-yellow-400'}">
+       Testimonials
+    </a>
+
+    <a href="${context}/faq"
+       class="block ${page == 'faq' ? 'text-yellow-400 font-semibold' : 'text-gray-300 hover:text-yellow-400'}">
+       FAQ
+    </a>
+
+    <a href="${context}/contact"
+       class="block ${page == 'contact' ? 'text-yellow-400 font-semibold' : 'text-gray-300 hover:text-yellow-400'}">
+       Contact
+    </a>
   </div>
+
 
   <script>
     const mobileBtn = document.getElementById('mobileMenuBtn');

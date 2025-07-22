@@ -51,6 +51,12 @@ public class ViewController {
 		log.info("::::::::::::::::::::::faq called::::::::::::::::::::::");
 		return "faq"; 
 	}
+
+	@GetMapping("/cart")
+	public String cart() {
+		log.info("::::::::::::::::::::::cart called::::::::::::::::::::::");
+		return "cart";
+	}
 	
 	@GetMapping("/order")
 	public String appointment() {
