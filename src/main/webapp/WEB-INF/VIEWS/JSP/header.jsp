@@ -72,7 +72,7 @@
       <a href="${context}/" class="${page == 'home' ? 'text-yellow-400 font-semibold' : 'text-gray-300 hover:text-yellow-400'} transition duration-200">Home</a>
       <a href="${context}/about" class="${page == 'about' ? 'text-yellow-400 font-semibold' : 'text-gray-300 hover:text-yellow-400'} transition duration-200">About</a>
       <a href="${context}/services" class="${page == 'services' ? 'text-yellow-400 font-semibold' : 'text-gray-300 hover:text-yellow-400'} transition duration-200">Services</a>
-      <a href="${context}/order" class="${page == 'order' ? 'text-yellow-400 font-semibold' : 'text-gray-300 hover:text-yellow-400'} transition duration-200">Order</a>
+      <a href="${context}/order" class="${page == 'order' ? 'text-yellow-400 font-semibold' : 'text-gray-300 hover:text-yellow-400'} transition duration-200">Order Online</a>
       <a href="${context}/testimonials" class="${page == 'testimonials' ? 'text-yellow-400 font-semibold' : 'text-gray-300 hover:text-yellow-400'} transition duration-200">Testimonials</a>
       <a href="${context}/faq" class="${page == 'faq' ? 'text-yellow-400 font-semibold' : 'text-gray-300 hover:text-yellow-400'} transition duration-200">FAQ</a>
     </nav>

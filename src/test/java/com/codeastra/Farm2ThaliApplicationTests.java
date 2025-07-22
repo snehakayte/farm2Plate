@@ -1,4 +1,4 @@
-package com.farm2thali;
+package com.codeastra;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

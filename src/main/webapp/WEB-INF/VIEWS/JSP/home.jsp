@@ -5,6 +5,44 @@
 <%@ include file="header.jsp" %>
 <c:set var="context" value="${pageContext.request.contextPath}" />
 
+<!-- Promo Banner -->
+<div id="promoBanner" class="w-full bg-yellow-400 text-gray-900 py-3 px-4 flex items-center font-raleway text-sm sm:text-base shadow-md z-50 relative overflow-hidden">
+
+  <!-- Logo -->
+  <div class="flex-shrink-0 flex items-center space-x-2">
+    <img src="${context}/assets/LOGO/poultry/logo.png" alt="Farm2Thali Logo" class="h-8 w-8 rounded-full shadow" />
+  </div>
+
+  <!-- Marquee Text Container -->
+  <div class="flex-grow mx-4 overflow-hidden">
+    <div class="marquee-text font-semibold tracking-wide whitespace-nowrap">
+      🎁 First 100 Customers Get Free Milk or Paneer Sample! Hurry Up Order Now!
+    </div>
+  </div>
+
+  <!-- Close Button -->
+  <button onclick="closePromoBanner()" class="text-xl font-bold hover:text-red-600 transition duration-300 absolute right-3 top-2 sm:top-3">
+    &times;
+  </button>
+</div>
+
+<!-- Marquee CSS -->
+<style>
+  .marquee-text {
+    display: inline-block;
+    animation: scroll-left 20s linear infinite;
+  }
+
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+</style>
+
 <!-- Hero Section -->
 <section class="bg-gray-900 py-24 text-white">
   <div class="max-w-7xl mx-auto px-6 text-center" data-aos="fade-up">
@@ -12,8 +50,9 @@
       Welcome to <span class="bg-yellow-400 text-gray-900 px-4 py-1 rounded-2xl shadow-md">Farm2Thali</span>
     </h1>
     <p class="text-xl max-w-3xl mx-auto leading-relaxed font-light text-gray-300">
-      Premium <span class="font-semibold text-yellow-400">White Eggs</span> & <span class="font-semibold text-yellow-400">Gavran Eggs</span> delivered fresh — hygienic, ethical, and naturally raised.
+      Pure <span class="font-semibold text-yellow-400">Cow Milk</span>, <span class="font-semibold text-yellow-400">Paneer</span>, <span class="font-semibold text-yellow-400">Curd</span>, and <span class="font-semibold text-yellow-400">Desi Ghee</span> — straight from the farm. Plus, farm-fresh <span class="font-semibold text-yellow-400">White</span> & <span class="font-semibold text-yellow-400">Gavran Eggs</span> delivered hygienically to your doorstep.
     </p>
+    
     <a href="${context}/order"
        class="mt-10 inline-block bg-yellow-400 text-gray-900 font-semibold px-10 py-4 rounded-full shadow-xl hover:bg-yellow-300 hover:scale-105 transition-transform duration-300 ease-in-out">
       Place Your Order Now
@@ -21,11 +60,64 @@
   </div>
 </section>
 
-<!-- Featured Eggs Section -->
+
+<!-- Featured Products Section -->
 <section class="bg-gray-800 py-24 px-6 text-white">
   <div class="max-w-6xl mx-auto text-center">
     <h2 class="text-4xl font-bold text-yellow-400 mb-16 font-poppins" data-aos="fade-up">Our Fresh Offerings</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-12">
+
+      <!-- Fresh Cow Milk -->
+      <div class="group bg-gray-900 p-6 rounded-3xl shadow-2xl border border-gray-700 overflow-hidden hover:shadow-yellow-400 transition-shadow duration-300" data-aos="zoom-in">
+        <div class="relative overflow-hidden rounded-2xl">
+          <img src="${context}/assets/LOGO/dairy/GirCow.jpeg" alt="Fresh Cow Milk"
+               class="w-full h-64 object-cover rounded-2xl shadow-md transform group-hover:scale-110 transition-transform duration-500 ease-in-out" />
+          <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 rounded-2xl"></div>
+        </div>
+        <h3 class="text-2xl font-bold text-yellow-400 mt-6 mb-2">Fresh Cow Milk</h3>
+        <p class="text-gray-300 text-base leading-relaxed font-light">
+          Delivered straight from the farm, our pure and creamy cow milk is free from additives and preservatives.
+        </p>
+      </div>
+
+      <!-- Fresh Paneer -->
+      <div class="group bg-gray-900 p-6 rounded-3xl shadow-2xl border border-gray-700 overflow-hidden hover:shadow-yellow-400 transition-shadow duration-300" data-aos="zoom-in">
+        <div class="relative overflow-hidden rounded-2xl">
+          <img src="${context}/assets/LOGO/dairy/Paneer.jpg" alt="Paneer"
+               class="w-full h-64 object-cover rounded-2xl shadow-md transform group-hover:scale-110 transition-transform duration-500 ease-in-out" />
+          <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 rounded-2xl"></div>
+        </div>
+        <h3 class="text-2xl font-bold text-yellow-400 mt-6 mb-2">Homemade Paneer</h3>
+        <p class="text-gray-300 text-base leading-relaxed font-light">
+          Soft, rich, and freshly made from full cream milk. Perfect for your curries, grills, or healthy meals.
+        </p>
+      </div>
+
+      <!-- Fresh Curd -->
+      <div class="group bg-gray-900 p-6 rounded-3xl shadow-2xl border border-gray-700 overflow-hidden hover:shadow-yellow-400 transition-shadow duration-300" data-aos="zoom-in">
+        <div class="relative overflow-hidden rounded-2xl">
+          <img src="${context}/assets/LOGO/dairy/Curd.jpg" alt="Curd"
+               class="w-full h-64 object-cover rounded-2xl shadow-md transform group-hover:scale-110 transition-transform duration-500 ease-in-out" />
+          <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 rounded-2xl"></div>
+        </div>
+        <h3 class="text-2xl font-bold text-yellow-400 mt-6 mb-2">Farm-Fresh Curd</h3>
+        <p class="text-gray-300 text-base leading-relaxed font-light">
+          Thick, creamy curd made from natural milk — a perfect probiotic for your daily health and digestion.
+        </p>
+      </div>
+
+      <!-- Desi Ghee -->
+      <div class="group bg-gray-900 p-6 rounded-3xl shadow-2xl border border-gray-700 overflow-hidden hover:shadow-yellow-400 transition-shadow duration-300" data-aos="zoom-in">
+        <div class="relative overflow-hidden rounded-2xl">
+          <img src="${context}/assets/LOGO/dairy/Ghee.jpg" alt="Desi Ghee"
+               class="w-full h-64 object-cover rounded-2xl shadow-md transform group-hover:scale-110 transition-transform duration-500 ease-in-out" />
+          <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 rounded-2xl"></div>
+        </div>
+        <h3 class="text-2xl font-bold text-yellow-400 mt-6 mb-2">Pure Desi Ghee</h3>
+        <p class="text-gray-300 text-base leading-relaxed font-light">
+          A2 cow ghee made using traditional bilona method — rich in aroma, flavor, and nutrition.
+        </p>
+      </div>
 
       <!-- White Eggs -->
       <div class="group bg-gray-900 p-6 rounded-3xl shadow-2xl border border-gray-700 overflow-hidden hover:shadow-yellow-400 transition-shadow duration-300" data-aos="zoom-in">
@@ -57,51 +149,95 @@
   </div>
 </section>
 
+
+
 <!-- Why Farm2Thali -->
 <section class="bg-gray-900 text-white py-24 px-6">
-  <div class="max-w-6xl mx-auto text-center">
-    <h2 class="text-4xl font-extrabold text-yellow-400 mb-16 font-raleway" data-aos="fade-up">Why Choose Farm2Thali?</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 text-left">
+  <div class="max-w-6xl mx-auto text-center mb-20">
+    <h2 class="text-4xl font-extrabold text-yellow-400 font-raleway" data-aos="fade-up">Why Choose Farm2Thali?</h2>
+  </div>
 
-      <div class="bg-gray-800 p-6 rounded-3xl shadow-xl hover:shadow-yellow-400 transition-shadow duration-300 border border-gray-700" data-aos="fade-up">
-        <h4 class="text-xl font-bold text-yellow-400 mb-3">Naturally Raised</h4>
-        <p class="text-gray-300 font-light leading-relaxed">
-          We raise our poultry in a healthy, hormone-free environment ensuring better quality and taste.
-        </p>
+  <!-- 🥛 Milk Comparison First -->
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-24">
+    <!-- Milk Comparison Image -->
+    <div data-aos="fade-right">
+      <div class="relative group rounded-3xl shadow-xl overflow-hidden">
+        <img 
+          src="${context}/assets/LOGO/dairy/MilkComparing.png" 
+          alt="Milk Comparison"
+          class="w-full h-[24rem] md:h-[28rem] object-contain rounded-3xl transition-transform duration-500 transform group-hover:scale-110"
+        />
+        <div class="absolute inset-0 bg-yellow-400 bg-opacity-0 group-hover:bg-opacity-10 transition duration-500 rounded-3xl"></div>
       </div>
+    </div>
 
-      <div class="bg-gray-800 p-6 rounded-3xl shadow-xl hover:shadow-yellow-400 transition-shadow duration-300 border border-gray-700" data-aos="fade-up" data-aos-delay="100">
-        <h4 class="text-xl font-bold text-yellow-400 mb-3">Daily Fresh Supply</h4>
-        <p class="text-gray-300 font-light leading-relaxed">
-          Eggs are collected and delivered fresh every morning — straight from the farm.
-        </p>
+    <!-- Milk Highlights -->
+    <div data-aos="fade-left">
+      <h2 class="text-3xl font-bold text-yellow-400 mb-4">Pure A2 Goodness vs Market Milk</h2>
+      <ul class="list-disc list-inside text-gray-300 text-lg space-y-3">
+        <li><span class="text-yellow-400 font-medium">Sourced from Gir Cows</span> – Naturally A2, easier to digest</li>
+        <li><span class="text-yellow-400 font-medium">Fresh within 12 hours</span> – No long storage or transit</li>
+        <li><span class="text-yellow-400 font-medium">No water or chemical dilution</span></li>
+        <li>Ethical, hormone-free farming with complete traceability</li>
+        <li>Market milk often lacks transparency, freshness, and purity</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 🥚 Egg Comparison Second -->
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    <!-- Egg Comparison Image -->
+    <div data-aos="fade-right">
+      <div class="relative group rounded-3xl shadow-xl overflow-hidden">
+        <img 
+          src="${context}/assets/LOGO/poultry/Eggscomparing.png"
+          alt="Yolk Comparison"
+          class="w-full h-[24rem] md:h-[28rem] object-contain rounded-3xl transition-transform duration-500 transform group-hover:scale-110"
+        />
+        <div class="absolute inset-0 bg-yellow-400 bg-opacity-0 group-hover:bg-opacity-10 transition duration-500 rounded-3xl"></div>
       </div>
+    </div>
 
-      <div class="bg-gray-800 p-6 rounded-3xl shadow-xl hover:shadow-yellow-400 transition-shadow duration-300 border border-gray-700" data-aos="fade-up" data-aos-delay="200">
-        <h4 class="text-xl font-bold text-yellow-400 mb-3">Local & Ethical</h4>
-        <p class="text-gray-300 font-light leading-relaxed">
-          Supporting local farmers and traditional practices to keep food clean, nutritious, and authentic.
-        </p>
-      </div>
-
+    <!-- Egg Highlights -->
+    <div data-aos="fade-left">
+      <h2 class="text-3xl font-bold text-yellow-400 mb-4">Farm-Fresh Nutrition vs Regular Eggs</h2>
+      <ul class="list-disc list-inside text-gray-300 text-lg space-y-3">
+        <li><span class="text-yellow-400 font-medium">100% Herbal Feed</span> – No antibiotics or hormone injections</li>
+        <li><span class="text-yellow-400 font-medium">Deep Yellow Yolks</span> – Packed with natural nutrition</li>
+        <li>Strong shells and hygienic packaging</li>
+        <li>Delivered fresh daily from our farm</li>
+        <li>Unlike factory eggs with artificial enhancers and weak quality</li>
+      </ul>
     </div>
   </div>
 </section>
 
+
 <!-- Call To Action -->
 <section class="bg-gray-800 text-white py-24 px-6 text-center">
   <div class="max-w-4xl mx-auto" data-aos="fade-up">
-    <h2 class="text-5xl font-extrabold mb-6 tracking-tight drop-shadow-md font-raleway">
-      Join the <span class="text-yellow-400 underline decoration-yellow-400">Fresh Egg Revolution</span>
-    </h2>
-    <p class="text-xl max-w-3xl mx-auto mb-10 font-light text-gray-300">
-      Taste the difference with our naturally raised farm eggs. Ethical, local, and full of nutrition.
-    </p>
+<h2 class="text-4xl font-extrabold mb-6 tracking-tight drop-shadow-md font-raleway">
+  Discover the <span class="text-yellow-400 underline decoration-yellow-400">Fresh Dairy & Egg Revolution</span>
+</h2>
+<p class="text-xl max-w-3xl mx-auto mb-10 font-light text-gray-300">
+  Experience purity in every drop and bite — from creamy farm-fresh milk and paneer to ethically sourced nutritious eggs. Farm2Thali brings wholesome goodness straight to your doorstep.
+</p>
+
+
     <a href="${context}/contact"
        class="inline-block bg-yellow-400 text-gray-900 font-bold px-10 py-4 rounded-full shadow-xl hover:bg-yellow-300 hover:scale-105 transition-transform duration-300">
       Contact Us Now
     </a>
   </div>
 </section>
+
+<script>
+  function closePromoBanner() {
+    const banner = document.getElementById('promoBanner');
+    banner.classList.add('translate-y-[-100%]');
+    setTimeout(() => banner.remove(), 700);
+  }
+</script>
+
 
 <%@ include file="footer.jsp" %>

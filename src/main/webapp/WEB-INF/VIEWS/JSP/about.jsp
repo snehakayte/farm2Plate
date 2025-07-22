@@ -12,7 +12,7 @@
       About <span class="text-yellow-400">Farm2Thali</span>
     </h1>
     <p class="text-xl text-gray-300 font-light leading-relaxed">
-      Born in the fields of Bhandara, trusted on every plate — we bring you food the way nature intended: clean, ethical, and full of life from our farm to your thali.
+      Ethical. Herbal. Local. We're not just delivering eggs — we’re delivering trust, purity, and nutrition straight from our farm to your thali.
     </p>
   </div>
 </section>
@@ -25,7 +25,7 @@
     <div data-aos="fade-right">
       <div class="relative group rounded-3xl shadow-xl overflow-hidden">
         <img 
-          src="${context}/assets/LOGO/poultry/journey.jpg" 
+          src="${context}/assets/LOGO/common/Roadmap.png" 
           alt="Our Poultry Farm"
           class="w-full h-full object-cover max-h-[600px] rounded-3xl transition-transform duration-500 transform group-hover:scale-110"
         />
@@ -33,19 +33,24 @@
       </div>
     </div>
 
-    <!-- Story Text -->
-    <div data-aos="fade-left">
-      <h2 class="text-4xl font-extrabold text-yellow-400 mb-6">Our Journey Since 2014</h2>
-      <p class="text-lg text-gray-300 leading-relaxed mb-5">
-       Farm2Thali was born out of a passion for purity, honesty, and real food. Since our humble beginnings in 2014, we’ve grown into a trusted local brand delivering farm-fresh eggs and ethically-raised meat directly to families who care about what’s on their plate.
-       </p>
-      <p class="text-lg text-gray-300 leading-relaxed mb-5">
-        Rooted in the heart of <span class="text-yellow-400 font-medium">Bhandara</span>, our farm is where tradition meets transparency. We raise our own poultry with care without antibiotics or hormonal stimulants. We believe healthy birds lay healthy eggs — so we feed our hens a <span class="text-yellow-400 font-medium">100% organic, herbal-based diet</span> without any antibiotics or hormonal stimulants.
-      </p>
-      <p class="text-lg text-gray-300 leading-relaxed">
-        With over a decade of hands-on experience in poultry farming, our mission is simple — to bring back real food to your thali. Clean, ethical, and naturally nutritious food, delivered directly from our farm to your family.
-      </p>
-    </div>
+<!-- Story Text -->
+<div data-aos="fade-left">
+  <h2 class="text-4xl font-extrabold text-yellow-400 mb-6">Our Journey Since 2014</h2>
+  <p class="text-lg text-gray-300 leading-relaxed mb-5">
+    Started in <span class="text-yellow-400 font-medium">Bhandara</span> with a small poultry farm, Farm2Thali has grown into a local brand trusted for its commitment to purity, freshness, and ethical farming.
+  </p>
+  <p class="text-lg text-gray-300 leading-relaxed mb-5">
+    Our hens are fed a <span class="text-yellow-400 font-medium">100% herbal, antibiotic-free diet</span> to ensure the highest quality eggs.
+  </p>
+  <p class="text-lg text-gray-300 leading-relaxed mb-5">
+    In <span class="text-yellow-400 font-medium">2021</span>, we proudly expanded into A2 dairy with our own <span class="text-yellow-400 font-medium">Gir cows</span>, offering A2 milk, paneer, and dahi — all free from preservatives and hormones.
+  </p>
+  <p class="text-lg text-gray-300 leading-relaxed">
+    From farm to thali, we deliver real, clean food that you and your family can trust.
+  </p>
+</div>
+
+
   </div>
 </section>
 
@@ -88,35 +93,7 @@
   </div>
 </section>
 
-<!-- What Makes Us Different Section -->
-<section class="bg-gray-800 text-white py-24 px-6">
-  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-    
-    <!-- Sparkling Image -->
-    <div data-aos="fade-right">
-      <div class="relative group rounded-3xl shadow-xl overflow-hidden">
-        <img 
-          src="${context}/assets/LOGO/poultry/comparing.png"
-          alt="Yolk Comparison"
-          class="w-full h-[24rem] md:h-[28rem] object-contain rounded-3xl transition-transform duration-500 transform group-hover:scale-110"
-        />
-        <div class="absolute inset-0 bg-yellow-400 bg-opacity-0 group-hover:bg-opacity-10 transition duration-500 rounded-3xl"></div>
-      </div>
-    </div>
 
-    <!-- List -->
-    <div data-aos="fade-left">
-      <h2 class="text-3xl font-bold text-yellow-400 mb-4">Herbal Nutrition. Honest Farming.</h2>
-      <ul class="list-disc list-inside text-gray-300 text-lg space-y-3">
-        <li><span class="text-yellow-400 font-medium">100% Herbal Hen Feed</span> with no artificial enhancers</li>
-        <li><span class="text-yellow-400 font-medium">Zero Antibiotics</span> and <span class="text-yellow-400 font-medium">No Hormonal Injections</span></li>
-        <li>Deep Yellow Yolks rich in natural nutrients</li>
-        <li>Clean, Strong Shells — proof of healthy hens</li>
-        <li>Farm-fresh eggs <span class="text-yellow-400">delivered the same day</span></li>
-      </ul>
-    </div>
-  </div>
-</section>
 
 <!-- Gallery Section -->
 <!-- Gallery Section -->

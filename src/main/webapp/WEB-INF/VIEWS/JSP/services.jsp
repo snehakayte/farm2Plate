@@ -9,20 +9,35 @@
 <section class="bg-gray-900 text-white py-24 px-6 text-center">
   <div class="max-w-5xl mx-auto">
     <h1 class="text-5xl font-extrabold tracking-tight mb-6 drop-shadow-lg leading-tight font-raleway">
-      Farm-Fresh Produce, Delivered to Your Doorstep
+      Wholesome Dairy, Eggs & More — From Farm2Thali
     </h1>
     <p class="text-xl font-light leading-relaxed text-gray-300 drop-shadow-md">
-      Discover chemical-free eggs, naturally grown vegetables, and responsibly sourced poultry — straight from our farm to your thali.
+      Experience the purity of <span class="text-yellow-400 font-medium">A2 Gir Cow Milk, Paneer, Curd</span> and <span class="text-yellow-400 font-medium">Desi Ghee</span>, along with <span class="text-yellow-400 font-medium">herbal-fed eggs</span> and <span class="text-yellow-400 font-medium">farm-grown vegetables</span> — delivered fresh from our farm to your thali.
     </p>
   </div>
 </section>
 
+
 <!-- What We Offer -->
 <section class="bg-gray-800 py-24 px-6 text-white">
-  <div class="max-w-6xl mx-auto text-center">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
     <h2 class="text-4xl font-bold text-yellow-400 mb-16 font-poppins" data-aos="fade-up">Our Fresh Offerings</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-12">
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
 
+ <!-- Dairy Product Carousel -->
+      <div class="group bg-gray-900 p-6 rounded-3xl shadow-2xl border border-gray-700 overflow-hidden hover:shadow-yellow-400 transition-shadow duration-300" data-aos="zoom-in">
+        <div class="relative overflow-hidden rounded-2xl h-64">
+          <img id="dairyCarousel" src="${context}/assets/LOGO/dairy/GirCow.jpeg" alt="Dairy Products"
+               class="w-full h-full object-cover rounded-2xl shadow-md transition-all duration-500 ease-in-out" />
+          <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 rounded-2xl"></div>
+        </div>
+        <h3 class="text-2xl font-bold text-yellow-400 mt-6 mb-2">A2 Milk & Dairy</h3>
+        <p class="text-gray-300 text-base leading-relaxed font-light">
+          Fresh A2 milk, soft paneer, creamy curd, and aromatic desi ghee — all from our indigenous Gir cows.
+        </p>
+      </div>
+      
       <!-- White Eggs Carousel -->
       <div class="group bg-gray-900 p-6 rounded-3xl shadow-2xl border border-gray-700 overflow-hidden hover:shadow-yellow-400 transition-shadow duration-300" data-aos="zoom-in">
         <div class="relative overflow-hidden rounded-2xl h-64">
@@ -49,9 +64,12 @@
         </p>
       </div>
 
+     
+
     </div>
   </div>
 </section>
+
 
 <!-- Why Choose Farm2Thali -->
 <section class="bg-gray-900 text-white py-20 px-6 border-t border-gray-700">
@@ -146,22 +164,33 @@
   ];
 
   const brownImages = [
-	"${context}/assets/LOGO/poultry/brown2.jpg",
+    "${context}/assets/LOGO/poultry/brown2.jpg",
     "${context}/assets/LOGO/poultry/brown1.jpg",
     "${context}/assets/LOGO/poultry/brown3.jpg",
     "${context}/assets/LOGO/poultry/brown4.jpg",
     "${context}/assets/LOGO/poultry/brown5.jpg"
   ];
 
+  const dairyImages = [
+    "${context}/assets/LOGO/dairy/Curd.jpg",
+    "${context}/assets/LOGO/dairy/Ghee.jpg",
+    "${context}/assets/LOGO/dairy/GirCow.jpeg",
+    "${context}/assets/LOGO/dairy/Paneer.jpg",
+    "${context}/assets/LOGO/dairy/GirCow.jpeg"
+  ];
+
   let whiteIndex = 0;
   let brownIndex = 0;
+  let dairyIndex = 0;
 
   setInterval(() => {
     whiteIndex = (whiteIndex + 1) % whiteImages.length;
     brownIndex = (brownIndex + 1) % brownImages.length;
+    dairyIndex = (dairyIndex + 1) % dairyImages.length;
 
     document.getElementById('whiteEggCarousel').src = whiteImages[whiteIndex];
     document.getElementById('brownEggCarousel').src = brownImages[brownIndex];
+    document.getElementById('dairyCarousel').src = dairyImages[dairyIndex];
   }, 3000); // Change image every 3 seconds
 </script>
 

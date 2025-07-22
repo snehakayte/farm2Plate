@@ -10,7 +10,14 @@
   <div class="max-w-3xl mx-auto bg-gray-800 p-10 rounded-3xl shadow-2xl border border-gray-700" data-aos="fade-up">
 
     <h2 class="text-4xl font-bold text-yellow-400 mb-6 text-center font-raleway">Place Your Order</h2>
-    <p class="text-gray-300 text-center mb-10">Fresh farm eggs delivered to your doorstep. Kindly fill the form below to book your order.</p>
+    <p class="text-gray-300 text-center mb-10">
+      Farm-fresh <span class="text-yellow-400">A2 milk, paneer, curd, ghee, and eggs</span> — delivered at your chosen time. Kindly fill the form below.
+    </p>
+
+    <!-- Delivery Timing Note -->
+    <div class="bg-gray-700/50 text-sm text-yellow-300 text-center p-3 mb-8 rounded-lg border border-yellow-500 shadow">
+      🕘 We deliver twice daily: <strong>Morning 9:00 AM</strong> & <strong>Evening till 7:00 PM</strong>
+    </div>
 
     <form action="${context}/submitOrder" method="post" class="space-y-6">
 
@@ -45,12 +52,16 @@
         <input type="hidden" id="lon" name="lon" />
       </div>
 
-      <!-- Egg Type -->
+      <!-- Product Type -->
       <div>
-        <label for="eggType" class="block text-gray-400 font-semibold mb-2">Select Egg Type</label>
-        <select id="eggType" name="eggType" required
+        <label for="productType" class="block text-gray-400 font-semibold mb-2">Select Product</label>
+        <select id="productType" name="productType" required
                 class="w-full p-4 bg-gray-900 border border-gray-700 rounded-xl text-white focus:ring-2 focus:ring-yellow-400 focus:outline-none">
           <option value="">-- Select --</option>
+          <option value="A2 Milk (Gir Cow)">A2 Milk (Gir Cow)</option>
+          <option value="Paneer">Paneer</option>
+          <option value="Curd">Curd</option>
+          <option value="Desi Ghee">Desi Ghee</option>
           <option value="White Eggs">White Eggs</option>
           <option value="Gavran Brown Eggs">Gavran Brown Eggs</option>
         </select>
@@ -58,9 +69,21 @@
 
       <!-- Quantity -->
       <div>
-        <label for="quantity" class="block text-gray-400 font-semibold mb-2">Quantity (in dozens)</label>
-        <input type="number" id="quantity" name="quantity" min="1" required
+        <label for="quantity" class="block text-gray-400 font-semibold mb-2">Quantity</label>
+        <input type="text" id="quantity" name="quantity" required
+               placeholder="e.g. 1 litre, 2 dozen, 250g paneer"
                class="w-full p-4 bg-gray-900 border border-gray-700 rounded-xl text-white placeholder-gray-500 focus:ring-2 focus:ring-yellow-400 focus:outline-none">
+      </div>
+
+      <!-- Preferred Delivery Time -->
+      <div>
+        <label for="deliveryTime" class="block text-gray-400 font-semibold mb-2">Preferred Delivery Time</label>
+        <select id="deliveryTime" name="deliveryTime" required
+                class="w-full p-4 bg-gray-900 border border-gray-700 rounded-xl text-white focus:ring-2 focus:ring-yellow-400 focus:outline-none">
+          <option value="">-- Select --</option>
+          <option value="Morning (9:00 AM)">Morning (9:00 AM)</option>
+          <option value="Evening (Before 7:00 PM)">Evening (Before 7:00 PM)</option>
+        </select>
       </div>
 
       <!-- Payment Mode -->
@@ -93,6 +116,8 @@
     </form>
   </div>
 </section>
+
+
 <script>
   const contextPath = '<%= request.getContextPath() %>'; // Safe JSP injection
 
