@@ -5,10 +5,6 @@
 <%@ include file="header.jsp" %>
 <c:set var="context" value="${pageContext.request.contextPath}" />
 
-<script>
-  // Clear cart on every refresh
-  sessionStorage.removeItem('cart');
-</script>
 
 <!-- Promo Banner -->
 <div id="promoBanner" class="w-full bg-yellow-400 text-gray-900 py-3 px-4 flex items-center font-raleway text-sm sm:text-base shadow-md z-50 relative overflow-hidden">
@@ -105,7 +101,7 @@
 <!-- Fresh Cow Milk -->
 <div class="group bg-gray-900 p-6 rounded-3xl shadow-2xl border border-gray-700 overflow-hidden hover:shadow-yellow-400 transition-shadow duration-300" data-aos="zoom-in">
   <div class="relative overflow-hidden rounded-2xl">
-    <img src="${context}/assets/LOGO/dairy/GirCow.jpeg" alt="Fresh Cow Milk"
+    <img src="${context}/assets/LOGO/products/GirCow.jpeg" alt="Fresh Cow Milk"
          class="w-full h-64 object-cover rounded-2xl shadow-md transform group-hover:scale-110 transition-transform duration-500 ease-in-out" />
     <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 rounded-2xl"></div>
   </div>
@@ -155,7 +151,7 @@
       <!-- Fresh Paneer -->
       <div class="group bg-gray-900 p-6 rounded-3xl shadow-2xl border border-gray-700 overflow-hidden hover:shadow-yellow-400 transition-shadow duration-300" data-aos="zoom-in">
         <div class="relative overflow-hidden rounded-2xl">
-          <img src="${context}/assets/LOGO/dairy/Paneer.jpg" alt="Paneer"
+          <img src="${context}/assets/LOGO/products/Paneer.jpg" alt="Paneer"
                class="w-full h-64 object-cover rounded-2xl shadow-md transform group-hover:scale-110 transition-transform duration-500 ease-in-out" />
           <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 rounded-2xl"></div>
         </div>
@@ -200,7 +196,7 @@
       <!-- Fresh Curd -->
       <div class="group bg-gray-900 p-6 rounded-3xl shadow-2xl border border-gray-700 overflow-hidden hover:shadow-yellow-400 transition-shadow duration-300" data-aos="zoom-in">
         <div class="relative overflow-hidden rounded-2xl">
-          <img src="${context}/assets/LOGO/dairy/Curd.jpg" alt="Curd"
+          <img src="${context}/assets/LOGO/products/Curd.jpg" alt="Curd"
                class="w-full h-64 object-cover rounded-2xl shadow-md transform group-hover:scale-110 transition-transform duration-500 ease-in-out" />
           <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 rounded-2xl"></div>
         </div>
@@ -245,7 +241,7 @@
 <!-- Desi Ghee -->
 <div class="group bg-gray-900 p-6 rounded-3xl shadow-2xl border border-gray-700 overflow-hidden hover:shadow-yellow-400 transition-shadow duration-300" data-aos="zoom-in">
   <div class="relative overflow-hidden rounded-2xl">
-    <img src="${context}/assets/LOGO/dairy/Ghee.jpg" alt="Desi Ghee"
+    <img src="${context}/assets/LOGO/products/Ghee.jpg" alt="Desi Ghee"
          class="w-full h-64 object-cover rounded-2xl shadow-md transform group-hover:scale-110 transition-transform duration-500 ease-in-out" />
     <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 rounded-2xl"></div>
   </div>
@@ -290,7 +286,7 @@
       <!-- White Eggs -->
       <div class="group bg-gray-900 p-6 rounded-3xl shadow-2xl border border-gray-700 overflow-hidden hover:shadow-yellow-400 transition-shadow duration-300" data-aos="zoom-in">
         <div class="relative overflow-hidden rounded-2xl">
-          <img src="${context}/assets/LOGO/poultry/whiteEggs.jpg" alt="White Eggs"
+          <img src="${context}/assets/LOGO/products/whiteEggs.jpg" alt="White Eggs"
                class="w-full h-64 object-cover rounded-2xl shadow-md transform group-hover:scale-110 transition-transform duration-500 ease-in-out" />
           <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 rounded-2xl"></div>
         </div>
@@ -336,7 +332,7 @@
 <!-- Gavran Eggs -->
 <div class="group bg-gray-900 p-6 rounded-3xl shadow-2xl border border-gray-700 overflow-hidden hover:shadow-yellow-400 transition-shadow duration-300" data-aos="zoom-in">
   <div class="relative overflow-hidden rounded-2xl">
-    <img src="${context}/assets/LOGO/poultry/brownEggs.jpg" alt="Gavran Eggs"
+    <img src="${context}/assets/LOGO/products/brownEggs.jpg" alt="Gavran Eggs"
          class="w-full h-64 object-cover rounded-2xl shadow-md transform group-hover:scale-110 transition-transform duration-500 ease-in-out" />
     <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 rounded-2xl"></div>
   </div>
@@ -520,7 +516,7 @@
 
   // Utility: Save cart to sessionStorage
   function saveCart(cart) {
-    console.log("cart is " + JSON.stringify(cart));
+    console.log("home.jsp cart is " + JSON.stringify(cart));
     sessionStorage.setItem('cart', JSON.stringify(cart));
   }
 
