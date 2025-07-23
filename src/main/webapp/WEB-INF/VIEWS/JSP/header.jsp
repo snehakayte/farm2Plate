@@ -76,9 +76,9 @@
     <a href="${context}/services"  class="${page == 'services' ? 'text-yellow-400 font-semibold' : 'text-gray-300 hover:text-yellow-400'} transition duration-200">Services</a>
 
     <a href="${context}/order" class="${page == 'order' ? 'text-yellow-400 font-semibold' : 'text-gray-300 hover:text-yellow-400'} transition duration-200">Order Online</a>
-
+<!--
     <a href="${context}/cart" class="${page == 'cart' ? 'text-yellow-400 font-semibold' : 'text-gray-300 hover:text-yellow-400'} transition duration-200">🛒 Cart</a>
-
+-->
     <a href="${context}/testimonials" class="${page == 'testimonials' ? 'text-yellow-400 font-semibold' : 'text-gray-300 hover:text-yellow-400'} transition duration-200">Testimonials </a>
 
     <a href="${context}/faq"  class="${page == 'faq' ? 'text-yellow-400 font-semibold' : 'text-gray-300 hover:text-yellow-400'} transition duration-200"> FAQ </a> </nav>
