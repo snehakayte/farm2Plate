@@ -1,9 +1,8 @@
 package com.farm2thali.controller;
 
+import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-
-import lombok.extern.log4j.Log4j2;
 
 @Log4j2
 @Controller
@@ -39,13 +38,8 @@ public class ViewController {
 		log.info("::::::::::::::::::::::Contact called::::::::::::::::::::::");
 		return "contact"; 
 	}
-	
-	@GetMapping("/testimonials")
-	public String testimonials() {
-		log.info("::::::::::::::::::::::testimonials called::::::::::::::::::::::");
-		return "testimonials"; 
-	}
-	
+
+
 	@GetMapping("/faq")
 	public String faq() {
 		log.info("::::::::::::::::::::::faq called::::::::::::::::::::::");

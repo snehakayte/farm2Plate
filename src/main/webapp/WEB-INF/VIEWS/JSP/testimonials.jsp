@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%
-    request.setAttribute("page", "testimonials");
-%>
+<%@ page import="java.util.List" %>
+<%@ page import="com.farm2thali.model.Testimonial" %>
+<%@ page import="com.farm2thali.controller.TestimonialLoader" %>
+
 <%@ include file="header.jsp" %>
 <c:set var="context" value="${pageContext.request.contextPath}" />
 
@@ -17,55 +18,72 @@
 
 <!-- Testimonials Section -->
 <section class="bg-gray-800 py-24 px-6 text-white">
-  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10" data-aos="fade-up">
+  <div class="max-w-6xl mx-auto" data-aos="fade-up">
 
-    <!-- Testimonial 1 -->
-    <div class="bg-gray-900 border border-gray-700 rounded-3xl p-6 shadow-xl hover:shadow-yellow-400/20 transition duration-300">
-      <p class="text-lg text-gray-300 mb-6 leading-relaxed">
-        “I switched to Farm2Thali eggs six months ago and haven't looked back. The taste, freshness, and yolk color are just unbeatable.
-        I love that they’re free from chemicals,antibiotics,cruelty and truly local.”
-      </p>
-      <div class="flex items-center gap-4">
-        <img src="${context}/assets/LOGO/poultry/girl1.jpg" alt="Priya Deshmukh" class="w-12 h-12 rounded-full border-2 border-yellow-400" />
-        <div>
-          <h4 class="text-base font-semibold text-yellow-400">Priya Deshmukh</h4>
-          <p class="text-sm text-gray-400">Homemaker, Nagpur</p>
-        </div>
-      </div>
-    </div>
+      <c:choose>
+        <c:when test="${not empty testimonials}">
+          <div class="grid gap-6">
+            <c:forEach var="t" items="${testimonials}">
+              <div class="bg-gray-900 border border-gray-700 rounded-3xl p-6 shadow-xl hover:shadow-yellow-400/20 transition duration-300">
+                <p class="text-lg text-gray-300 mb-6 leading-relaxed">“${t.message}”</p>
+                <div class="flex items-center gap-4">
+                  <img src="${pageContext.request.contextPath}/assets/LOGO/poultry/${t.image}" alt="${t.name}" class="w-12 h-12 rounded-full border-2 border-yellow-400" />
+                  <div>
+                    <h4 class="text-base font-semibold text-yellow-400">${t.name}</h4>
+                    <p class="text-sm text-gray-400">${t.role}, ${t.city}</p>
+                  </div>
+                </div>
+              </div>
+            </c:forEach>
+          </div>
+        </c:when>
+      </c:choose>
 
-    <!-- Testimonial 2 -->
-    <div class="bg-gray-900 border border-gray-700 rounded-3xl p-6 shadow-xl hover:shadow-yellow-400/20 transition duration-300">
-      <p class="text-lg text-gray-300 mb-6 leading-relaxed">
-        “As a fitness trainer, quality protein matters. I recommend Farm2Thali’s white eggs to my clients for their high nutritional value.
-        Their delivery is always on time, and the eggs stay fresh longer.”
-      </p>
-      <div class="flex items-center gap-4">
-        <img src="${context}/assets/LOGO/poultry/boy1.jpg" alt="Rahul Chavan" class="w-12 h-12 rounded-full border-2 border-yellow-400" />
-        <div>
-          <h4 class="text-base font-semibold text-yellow-400">Rahul Chavan</h4>
-          <p class="text-sm text-gray-400">Fitness Coach, Pune</p>
-        </div>
+    <!-- If no testimonials, show "be first" message -->
+    <c:if test="${empty testimonials}">
+      <div class="bg-gray-900 rounded-3xl shadow-xl p-10 text-center max-w-3xl mx-auto mb-12">
+        <h3 class="text-3xl font-semibold text-yellow-400 mb-4">Be the first to review our services!</h3>
+        <p class="text-gray-300">We’d love to hear your thoughts. Share your experience and help us grow!</p>
       </div>
-    </div>
+    </c:if>
 
-    <!-- Testimonial 3 -->
-    <div class="bg-gray-900 border border-gray-700 rounded-3xl p-6 shadow-xl hover:shadow-yellow-400/20 transition duration-300">
-      <p class="text-lg text-gray-300 mb-6 leading-relaxed">
-        “I’ve been ordering from Farm2Thali every week. The desi brown eggs remind me of my childhood village days. So much flavor and freshness!
-        Great service and eco-friendly packaging too.”
-      </p>
-      <div class="flex items-center gap-4">
-        <img src="${context}/assets/LOGO/poultry/boy2.jpg" alt="Suresh Patil" class="w-12 h-12 rounded-full border-2 border-yellow-400" />
-        <div>
-          <h4 class="text-base font-semibold text-yellow-400">Suresh Patil</h4>
-          <p class="text-sm text-gray-400">Retired Govt Officer, Bhandara</p>
+    <!-- Always visible review form -->
+   <form action="/submitReview" method="post" class="space-y-6">
+
+        <!-- Full Name -->
+        <div class="relative z-0 w-full group">
+          <input type="text" name="name" id="name"
+                 class="peer bg-transparent border-b-2 border-gray-600 text-white placeholder-transparent focus:outline-none focus:border-yellow-400 w-full px-0 py-2 text-sm"
+                 placeholder="Name" required />
+          <label for="name"
+                 class="absolute left-0 top-2.5 text-sm text-gray-400 peer-placeholder-shown:top-2.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 transition-all peer-focus:top-0 peer-focus:text-yellow-400 peer-focus:text-sm">
+            Full Name
+          </label>
         </div>
-      </div>
-    </div>
+
+
+
+        <!-- Message -->
+        <div class="relative z-0 w-full group">
+          <textarea id="message" name="message" rows="5"
+                    class="peer bg-transparent border-b-2 border-gray-600 text-white placeholder-transparent focus:outline-none focus:border-yellow-400 w-full px-0 py-2 text-sm"
+                    placeholder="Your Review" required></textarea>
+          <label for="message"
+                 class="absolute left-0 top-2.5 text-sm text-gray-400 peer-placeholder-shown:top-2.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 transition-all peer-focus:top-0 peer-focus:text-yellow-400 peer-focus:text-sm">
+            Your Message
+          </label>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit"
+                class="w-full bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-3 rounded-xl transition shadow-md">
+          Send Message
+        </button>
+      </form>
 
   </div>
 </section>
+
 
 <!-- Final CTA -->
 <section class="bg-yellow-400 text-gray-900 py-16 text-center px-6">
