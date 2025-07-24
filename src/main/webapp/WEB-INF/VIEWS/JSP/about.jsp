@@ -12,7 +12,7 @@
       About <span class="text-yellow-400">Farm2Thali</span>
     </h1>
     <p class="text-xl text-gray-300 font-light leading-relaxed">
-      Ethical. Herbal. Local. We're not just delivering farm produce — we’re delivering trust, purity, and nutrition straight from our farm to your thali.
+      Ethical. Herbal. Local. We're not just delivering eggs — we’re delivering trust, purity, and nutrition straight from our farm to your thali.
     </p>
   </div>
 </section>
@@ -22,46 +22,33 @@
   <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
     
     <!-- Image with yellow hover glow -->
-   <div data-aos="fade-right">
-     <div class="relative group rounded-3xl shadow-xl overflow-hidden">
-       <img
-         src="${context}/assets/LOGO/common/Roadmap.png"
-         alt="Our Poultry Farm"
-         class="w-full h-auto rounded-3xl transition-transform duration-500 transform group-hover:scale-105"
-       />
-       <div class="absolute inset-0 bg-yellow-400 bg-opacity-0 group-hover:bg-opacity-10 transition duration-500 rounded-3xl pointer-events-none"></div>
-     </div>
-   </div>
+    <div data-aos="fade-right">
+      <div class="relative group rounded-3xl shadow-xl overflow-hidden">
+        <img 
+          src="${context}/assets/LOGO/common/Roadmap.png" 
+          alt="Our Poultry Farm"
+          class="w-full h-full object-cover max-h-[600px] rounded-3xl transition-transform duration-500 transform group-hover:scale-110"
+        />
+        <div class="absolute inset-0 bg-yellow-400 bg-opacity-0 group-hover:bg-opacity-10 transition duration-500 rounded-3xl"></div>
+      </div>
+    </div>
 
 <!-- Story Text -->
 <div data-aos="fade-left">
   <h2 class="text-4xl font-extrabold text-yellow-400 mb-6">Our Journey Since 2014</h2>
-
   <p class="text-lg text-gray-300 leading-relaxed mb-5">
-    It all began in the heart of <span class="text-yellow-400 font-medium">Bhandara</span> with a humble poultry farm and a simple mission — to bring back the taste of real food.
+    Started in <span class="text-yellow-400 font-medium">Bhandara</span> with a small poultry farm, Farm2Thali has grown into a local brand trusted for its commitment to purity, freshness, and ethical farming.
   </p>
-
   <p class="text-lg text-gray-300 leading-relaxed mb-5">
-    Today, Farm2Thali is a growing local brand known for purity, freshness, and our commitment to <span class="text-yellow-400 font-medium">ethical farming</span>.
+    Our hens are fed a <span class="text-yellow-400 font-medium">100% herbal, antibiotic-free diet</span> to ensure the highest quality eggs.
   </p>
-
   <p class="text-lg text-gray-300 leading-relaxed mb-5">
-    Our hens thrive on a <span class="text-yellow-400 font-medium">100% herbal, antibiotic-free diet</span>, ensuring clean, protein-rich eggs delivered directly to your doorstep.
+    In <span class="text-yellow-400 font-medium">2021</span>, we proudly expanded into A2 dairy with our own <span class="text-yellow-400 font-medium">Gir cows</span>, offering A2 milk, paneer, and dahi — all free from preservatives and hormones.
   </p>
-
-  <p class="text-lg text-gray-300 leading-relaxed mb-5">
-    In <span class="text-yellow-400 font-medium">2021</span>, we embraced our next big milestone — launching A2 dairy products from our own <span class="text-yellow-400 font-medium">Gir cows</span>, raised with care and free from hormones or preservatives.
-  </p>
-
-  <p class="text-lg text-gray-300 leading-relaxed mb-5">
-    Whether it’s <span class="text-yellow-400 font-medium">milk, paneer, or dahi</span>, every drop and bite is handled with love, ensuring maximum freshness and nutritional value.
-  </p>
-
   <p class="text-lg text-gray-300 leading-relaxed">
-    We believe that your family deserves nothing less than clean, real food — from our <span class="text-yellow-400 font-medium">farm to your thali</span>.
+    From farm to thali, we deliver real, clean food that you and your family can trust.
   </p>
 </div>
-
 
 
   </div>

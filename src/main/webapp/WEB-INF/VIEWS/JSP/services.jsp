@@ -9,7 +9,7 @@
 <section class="bg-gray-900 text-white py-24 px-6 text-center">
   <div class="max-w-5xl mx-auto">
     <h1 class="text-5xl font-extrabold tracking-tight mb-6 drop-shadow-lg leading-tight font-raleway">
-      Wholesome Dairy, Eggs & More — From <span class="text-yellow-400">Farm2Thali</span>
+      Wholesome Dairy, Eggs & More — From Farm2Thali
     </h1>
     <p class="text-xl font-light leading-relaxed text-gray-300 drop-shadow-md">
       Experience the purity of <span class="text-yellow-400 font-medium">A2 Gir Cow Milk, Paneer, Curd</span> and <span class="text-yellow-400 font-medium">Desi Ghee</span>, along with <span class="text-yellow-400 font-medium">herbal-fed eggs</span> and <span class="text-yellow-400 font-medium">farm-grown vegetables</span> — delivered fresh from our farm to your thali.

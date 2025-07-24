@@ -21,25 +21,28 @@
 
     <!-- Q1 -->
     <div class="bg-gray-900 rounded-3xl border border-gray-700 p-6 shadow-md">
-      <h3 class="text-xl font-bold text-yellow-400 mb-2">What is Farm2Thali?</h3>
+      <h3 class="text-xl font-bold text-yellow-400 mb-2">What is the difference between white and brown (Gavran) eggs?</h3>
       <p class="text-gray-300 leading-relaxed">
-        Farm2Thali is a farm-direct initiative delivering fresh, chemical-free dairy and livestock products like milk, paneer, curd, eggs, and more — straight from trusted farms to your thali.
+        White eggs typically come from commercial poultry and have a clean taste. Brown (Gavran) eggs come from native desi hens raised in open environments,
+        offering richer taste and higher immunity-boosting nutrients. Both are free from chemicals and hormones.
       </p>
     </div>
 
     <!-- Q2 -->
     <div class="bg-gray-900 rounded-3xl border border-gray-700 p-6 shadow-md">
-      <h3 class="text-xl font-bold text-yellow-400 mb-2">What makes your milk different from regular packaged milk?</h3>
+      <h3 class="text-xl font-bold text-yellow-400 mb-2">Are your eggs free from antibiotics and hormones?</h3>
       <p class="text-gray-300 leading-relaxed">
-        Our milk is unadulterated, preservative-free, and sourced daily from local farms. It is non-homogenized, non-pasteurized, and contains natural fat and nutrition — just as nature intended.
+        Absolutely. All our eggs — white and Gavran — are 100% free from antibiotics, hormonal injections, and synthetic feed. We feed our hens with herbal,
+        natural grains to ensure safe and healthy produce.
       </p>
     </div>
 
     <!-- Q3 -->
     <div class="bg-gray-900 rounded-3xl border border-gray-700 p-6 shadow-md">
-      <h3 class="text-xl font-bold text-yellow-400 mb-2">How do you ensure the quality of your products?</h3>
+      <h3 class="text-xl font-bold text-yellow-400 mb-2">Are Gavran eggs more nutritious than white eggs?</h3>
       <p class="text-gray-300 leading-relaxed">
-        We personally verify and partner only with ethical, clean, and organic farm vendors. All our suppliers follow hygienic milking and processing standards. Our products go through routine quality checks.
+        Gavran eggs are slightly richer in nutrients due to their desi origin and natural diet. They often have darker yolks, more Omega-3s,
+        and a stronger flavor. However, both egg types from Farm2Thali are highly nutritious and chemical-free.
       </p>
     </div>
 

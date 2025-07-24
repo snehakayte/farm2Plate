@@ -114,14 +114,19 @@
     class="bg-yellow-400 text-gray-900 font-bold px-3 py-1 rounded-full shadow hover:bg-yellow-300"
     onclick="updateQuantityUniversal(this, -1)">−</button>
 
-  <input type="text"
-    class="w-12 text-center font-semibold text-yellow-400 bg-gray-900 border border-gray-700 rounded-md quantity-input"
-    value="1" readonly />
+<input type="number"
+  style="appearance: textfield; -moz-appearance: textfield; -webkit-appearance: none; margin: 0; text-align: center; vertical-align: middle; line-height: normal; height: 2rem;"
+  class="w-12 font-semibold text-yellow-400 bg-gray-900 border border-gray-700 rounded-md quantity-input"
+  value="1"
+  min="1"
+  oninput="updateQuantityUniversal(this, 0)" />
+
 
   <button type="button"
     class="bg-yellow-400 text-gray-900 font-bold px-3 py-1 rounded-full shadow hover:bg-yellow-300"
     onclick="updateQuantityUniversal(this, 1)">+</button>
 </div>
+
 
 
   <p class="text-gray-300 text-base leading-relaxed font-light mt-4">
@@ -463,6 +468,28 @@
 </section>
 
 <script>
+
+//Handle + and - button clicks
+function updateQuantityUniversal(button, delta) {
+  const input = button.parentElement.querySelector(".quantity-input");
+  let value = parseInt(input.value);
+  if (isNaN(value)) value = 1;
+
+  value += delta;
+  if (value < 1) value = 1;
+
+  input.value = value;
+}
+
+// Handle direct manual input
+function manualQuantityInput(input) {
+  let val = parseInt(input.value);
+  if (isNaN(val) || val < 1) {
+    input.value = 1; // reset invalid input
+  }
+}
+
+
   // Close top promo banner
   function closePromoBanner() {
     const banner = document.getElementById('promoBanner');
@@ -471,22 +498,40 @@
   }
 
   // Quantity selector + price update
-  function updateQuantityUniversal(button, change) {
-    const container = button.closest('.group'); // product card
-    const input = container.querySelector('.quantity-input');
-    const priceEl = container.querySelector('.total-price');
-    const unitEl = container.querySelector('.unit');
+  function updateQuantityUniversal(element, change) {
+  let container, input;
 
-    let qty = parseInt(input.value) || 1;
-    qty = Math.max(1, qty + change); // minimum 1
-    input.value = qty;
-
-    const unitPrice = parseFloat(priceEl.dataset.price);
-    const unitLabel = priceEl.dataset.unit || '';
-
-    priceEl.textContent = (unitPrice * qty).toFixed(2);
-    unitEl.textContent = qty === 1 ? unitLabel : '';
+  if (element.classList.contains('quantity-input')) {
+    // Case: manual input
+    input = element;
+    container = input.closest('.group');
+  } else {
+    // Case: + or - button
+    container = element.closest('.group');
+    input = container.querySelector('.quantity-input');
+    let currentQty = parseInt(input.value) || 1;
+    currentQty += change;
+    if (currentQty < 1) currentQty = 1;
+    input.value = currentQty;
   }
+
+  // Ensure quantity is valid
+  let qty = parseInt(input.value) || 1;
+  if (qty < 1) {
+    qty = 1;
+    input.value = qty;
+  }
+
+  // Update price
+  const priceEl = container.querySelector('.total-price');
+  const unitEl = container.querySelector('.unit');
+  const unitPrice = parseFloat(priceEl.dataset.price);
+  const unitLabel = priceEl.dataset.unit || '';
+
+  priceEl.textContent = (unitPrice * qty).toFixed(2);
+  unitEl.textContent = qty === 1 ? unitLabel : '';
+}
+
 
   // Show "Add to Cart" button on hover
   function showAddToCart(container) {
@@ -516,7 +561,6 @@
 
   // Utility: Save cart to sessionStorage
   function saveCart(cart) {
-    console.log("home.jsp cart is " + JSON.stringify(cart));
     sessionStorage.setItem('cart', JSON.stringify(cart));
   }
 
