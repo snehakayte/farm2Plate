@@ -40,12 +40,7 @@ public class ViewController {
 		return "contact"; 
 	}
 	
-	@GetMapping("/testimonials")
-	public String testimonials() {
-		log.info("::::::::::::::::::::::testimonials called::::::::::::::::::::::");
-		return "testimonials"; 
-	}
-	
+
 	@GetMapping("/faq")
 	public String faq() {
 		log.info("::::::::::::::::::::::faq called::::::::::::::::::::::");
