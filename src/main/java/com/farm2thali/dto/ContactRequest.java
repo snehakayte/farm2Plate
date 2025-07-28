@@ -6,13 +6,10 @@ import lombok.Data;
 import java.util.List;
 
 @Data
-public class OrderRequest {
-
-    @JsonProperty("customerName")
-    private String customerName;
+public class ContactRequest {
+    private String name;
     private String email;
     private String phone;
-    private String address;
-    private List<OrderItem> items;
-    private String total;
+    private String message;
+
 }

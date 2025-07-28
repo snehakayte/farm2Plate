@@ -1,46 +1,51 @@
 package com.farm2thali.controller;
 
-import java.net.URLEncoder;
-import java.nio.charset.StandardCharsets;
-import java.util.stream.Collectors;
-
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.farm2thali.dto.OrderItem;
+import com.farm2thali.dto.ContactRequest;
 import com.farm2thali.dto.OrderRequest;
-import com.farm2thali.dto.OrderResponse;
-
 import lombok.extern.log4j.Log4j2;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.*;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 @RestController
 @Log4j2
 public class OrderController {
 
+    @Autowired
+    private RestTemplate restTemplate;
+
     @PostMapping("/bookorder")
-    public OrderResponse bookOrder(@RequestBody OrderRequest orderRequest) {
-        log.info("Received Order: ");
-        log.info("Customer Name: {}", orderRequest.getCustomerName());
+    public ResponseEntity<String> bookOrder(@RequestBody OrderRequest orderRequest) {
+        log.info("Received Order from: {}", orderRequest.getCustomerName());
         log.info("Phone: {}", orderRequest.getPhone());
-        log.info("Address: {}", orderRequest.getAddress());
-        log.info("Total: {}", orderRequest.getTotal());
 
-        for (OrderItem item : orderRequest.getItems()) {
-            log.info("Item: {}, Quantity: {}, Price: {}", item.getName(), item.getQuantity(), item.getPrice());
-        }
+        // Prepare ContactRequest object
+        ContactRequest contactRequest = new ContactRequest();
+        contactRequest.setName(orderRequest.getCustomerName());
+        contactRequest.setEmail(orderRequest.getEmail());
+        contactRequest.setMessage("Order placed with total: ₹" + orderRequest.getTotal());
 
-        // Format WhatsApp message
-        String itemsText = orderRequest.getItems().stream()
-            .map(item -> String.format("- %s x%d @ ₹%.2f", item.getName(), item.getQuantity(), item.getPrice()))
-            .collect(Collectors.joining("\n"));
+        // Get dynamic base URL (e.g., http://localhost:8080)
+        String baseUrl = ServletUriComponentsBuilder.fromCurrentContextPath().build().toUriString();
+        String url = baseUrl + "/contact-submit";
+        log.info("Calling internal API: {}", url);
 
-        String message = String.format("Hello testing");
+        // Set headers
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
 
-        // Generate WhatsApp link (for manual/test usage)
-        String whatsappUrl = "https://wa.me/919834423725?text=" + URLEncoder.encode(message, StandardCharsets.UTF_8);
-        log.info("WhatsApp message URL: {}", whatsappUrl);
+        // Convert to form data since /contact-submit uses @RequestParam
+        String body = "fullname=" + contactRequest.getName() +
+                "&email=" + contactRequest.getEmail() +
+                "&message=" + contactRequest.getMessage();
 
-        return new OrderResponse("success", "Order placed successfully");
+        HttpEntity<String> requestEntity = new HttpEntity<>(body, headers);
+
+        // Execute POST request to /contact-submit
+        ResponseEntity<String> response = restTemplate.postForEntity(url, requestEntity, String.class);
+
+        return ResponseEntity.ok("Order placed and contact form submitted: " + response.getStatusCode());
     }
 }

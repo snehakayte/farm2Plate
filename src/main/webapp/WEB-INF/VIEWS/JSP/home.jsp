@@ -53,7 +53,7 @@
     <p class="text-xl max-w-3xl mx-auto leading-relaxed font-light text-gray-300">
       Pure <span class="font-semibold text-yellow-400">Cow Milk</span>, <span class="font-semibold text-yellow-400">Paneer</span>, <span class="font-semibold text-yellow-400">Curd</span>, and <span class="font-semibold text-yellow-400">Desi Ghee</span> — straight from the farm. Plus, farm-fresh <span class="font-semibold text-yellow-400">White</span> & <span class="font-semibold text-yellow-400">Gavran Eggs</span> delivered hygienically to your doorstep.
     </p>
-    
+
     <a href="${context}/order"
        class="mt-10 inline-block bg-yellow-400 text-gray-900 font-semibold px-10 py-4 rounded-full shadow-xl hover:bg-yellow-300 hover:scale-105 transition-transform duration-300 ease-in-out">
       Place Your Order Now
@@ -398,8 +398,8 @@
     <!-- Milk Comparison Image -->
     <div data-aos="fade-right">
       <div class="relative group rounded-3xl shadow-xl overflow-hidden">
-        <img 
-          src="${context}/assets/LOGO/dairy/MilkComparing.png" 
+        <img
+          src="${context}/assets/LOGO/dairy/MilkComparing.png"
           alt="Milk Comparison"
           class="w-full h-[24rem] md:h-[28rem] object-contain rounded-3xl transition-transform duration-500 transform group-hover:scale-110"
         />
@@ -425,7 +425,7 @@
     <!-- Egg Comparison Image -->
     <div data-aos="fade-right">
       <div class="relative group rounded-3xl shadow-xl overflow-hidden">
-        <img 
+        <img
           src="${context}/assets/LOGO/poultry/Eggscomparing.png"
           alt="Yolk Comparison"
           class="w-full h-[24rem] md:h-[28rem] object-contain rounded-3xl transition-transform duration-500 transform group-hover:scale-110"
@@ -576,8 +576,40 @@ function manualQuantityInput(input) {
     }
 
     saveCart(cart);
-    alert(`${product.name} updated in cart (${product.quantity} ${product.unit})`);
+
+showCenterAlert(product.name + " added to cart", product.quantity + " " + product.unit);
   }
+
+function showCenterAlert(title, message) {
+  // Create overlay
+  const overlay = document.createElement('div');
+  overlay.className = 'fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 alert-overlay';
+
+
+  // Create modal box
+  const modal = document.createElement('div');
+  modal.className = 'bg-white text-gray-900 px-8 py-6 rounded-xl shadow-2xl max-w-md text-center animate-fade-in-out';
+
+  // Set inner HTML
+modal.innerHTML =
+  '<div class="text-5xl mb-4">🛒</div>' +
+  '<div class="text-2xl font-bold mb-2">' + title + '</div>' +
+  '<div class="text-lg">' + message + '</div>';
+
+
+  overlay.appendChild(modal);
+  document.body.appendChild(overlay);
+
+  // Auto remove after 2 seconds
+  setTimeout(() => {
+    overlay.classList.add('opacity-0', 'transition-opacity', 'duration-500');
+    setTimeout(() => overlay.remove(), 500);
+  }, 2000);
+}
+
+
+
+
 
   // Handle Add to Cart button click
   function handleAddToCart(btn) {
@@ -601,6 +633,19 @@ function manualQuantityInput(input) {
     addToCart(product);
   }
 </script>
+
+<style>
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: scale(0.9); }
+  10% { opacity: 1; transform: scale(1); }
+  90% { opacity: 1; }
+  100% { opacity: 0; transform: scale(0.9); }
+}
+
+.animate-fade-in-out {
+  animation: fadeInOut 2s ease-in-out forwards;
+}
+</style>
 
 
 

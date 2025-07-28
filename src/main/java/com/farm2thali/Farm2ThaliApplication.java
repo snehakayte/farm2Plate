@@ -18,7 +18,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 public class Farm2ThaliApplication extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {
-		log.info("::::::::::::::::::::::Codeastra Application Started::::::::::::::::::::::");
+		log.info("::::::::::::::::::::::Farm2Thali Application Started::::::::::::::::::::::");
 
 		SpringApplication.run(Farm2ThaliApplication.class, args);
 	}

@@ -62,9 +62,9 @@ public class TestimonialController {
                 });
             }
 
-            if (testimonial.getImage() == null || testimonial.getImage().isBlank()) {
-                testimonial.setImage("default.jpg");
-            }
+//            if (testimonial.getImage() == null || testimonial.getImage().isBlank()) {
+//                testimonial.setImage("default.jpg");
+//            }
 
             existingTestimonials.add(testimonial);
             objectMapper.writerWithDefaultPrettyPrinter().writeValue(jsonFile, existingTestimonials);

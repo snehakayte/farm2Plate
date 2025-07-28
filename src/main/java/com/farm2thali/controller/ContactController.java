@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Log4j2
 @Controller
 public class ContactController {
+
     @Autowired
     private JavaMailSender mailSender;
 
@@ -21,6 +22,10 @@ public class ContactController {
                                     @RequestParam("message") String message,
                                     Model model) {
 
+        log.info("📩 Received contact form submission:");
+        log.info("👉 Name: {}", name);
+        log.info("📧 Email: {}", email);
+        log.info("📝 Message: {}", message);
 
         try {
             SimpleMailMessage mail = new SimpleMailMessage();
@@ -29,12 +34,16 @@ public class ContactController {
             mail.setText("Name: " + name + "\nEmail: " + email + "\n\nMessage:\n" + message);
             mail.setReplyTo(email);
 
+            log.info("📤 Sending email to contact@farm2thali.com...");
             mailSender.send(mail);
+            log.info("✅ Email sent successfully!");
 
             model.addAttribute("success", true);
         } catch (Exception e) {
+            log.error("❌ Failed to send contact form email", e);
             model.addAttribute("error", "There was an issue submitting your message.");
         }
+
         return "contact";
     }
 }

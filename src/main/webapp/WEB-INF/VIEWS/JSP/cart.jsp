@@ -20,10 +20,11 @@
   <button onclick="clearCart()" class="bg-red-600 text-white px-6 py-2 rounded-full hover:bg-red-700 transition">
     🗑️ Clear Cart
   </button>
-  <button onclick="alert('Proceeding to order placement...')"
-          class="bg-yellow-400 text-gray-900 font-bold px-6 py-2 rounded-full hover:bg-yellow-300 transition">
-    Proceed to Checkout
-  </button>
+ <button onclick="window.location.href='/checkout'"
+         class="bg-yellow-400 text-gray-900 font-bold px-6 py-2 rounded-full hover:bg-yellow-300 transition">
+   Proceed to Checkout
+ </button>
+
 </div>
 
   </div>
