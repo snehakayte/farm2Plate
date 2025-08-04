@@ -41,7 +41,7 @@
     </a>
 
     <!-- Facebook -->
-    <a href="https://www.facebook.com/farm2thali" target="_blank" class="hover:scale-110 transition-transform" aria-label="Facebook">
+    <a href="https://www.facebook.com/people/Farm2thali/61578481141027/" target="_blank" class="hover:scale-110 transition-transform" aria-label="Facebook">
       <img src="${pageContext.request.contextPath}/assets/LOGO/common/facebook.png" alt="Facebook" class="w-6 h-6 text-gray-300 hover:filter hover:brightness-150" />
     </a>
 

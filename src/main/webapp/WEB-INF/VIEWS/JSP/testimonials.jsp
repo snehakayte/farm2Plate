@@ -1,4 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%
+    request.setAttribute("page", "testimonials");
+%>
 <%@ page import="java.util.List" %>
 <%@ page import="com.farm2thali.model.Testimonial" %>
 <%@ page import="com.farm2thali.controller.TestimonialLoader" %>

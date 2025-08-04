@@ -51,7 +51,7 @@ public class TestimonialController {
     }
 
     @PostMapping("/submitReview")
-    public String submitReview(@ModelAttribute Testimonial testimonial, RedirectAttributes redirectAttributes) {
+    public String submitReview(@ModelAttribute Testimonial testimonial, RedirectAttributes redirectAttributes, Model model) {
         try {
             String jsonPath = servletContext.getRealPath(testimonialFilePath);
             File jsonFile = new File(jsonPath);
@@ -68,6 +68,7 @@ public class TestimonialController {
 
             existingTestimonials.add(testimonial);
             objectMapper.writerWithDefaultPrettyPrinter().writeValue(jsonFile, existingTestimonials);
+            model.addAttribute("testimonials", existingTestimonials);
 
             redirectAttributes.addFlashAttribute("successMessage", "Thanks for your review!");
         } catch (Exception e) {
@@ -75,6 +76,6 @@ public class TestimonialController {
             redirectAttributes.addFlashAttribute("errorMessage", "Error saving your review. Please try again.");
         }
 
-        return "redirect:/testimonials";
+        return "testimonials";
     }
 }
